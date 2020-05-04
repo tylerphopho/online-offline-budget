@@ -2,7 +2,7 @@ const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const compression = require("compression");
-
+const path = require("path");
 const PORT = 3000;
 
 const app = express();
@@ -29,6 +29,6 @@ app.get("/", (req,res ) => {
   res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
   console.log(`App running on port http://localhost:${PORT}`);
 });
