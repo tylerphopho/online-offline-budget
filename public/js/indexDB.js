@@ -43,7 +43,7 @@ function checkDatabase() {
 
                 store.clear();
             }).catch(() => {
-                saveeRecord();
+                saveRecord();
             })
         }
     };
