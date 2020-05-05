@@ -15,7 +15,7 @@ request.onerror = function(event) {
     console.log("Uh oh," + event.target.errorCode);
 };
 
-function createRecord (record) {
+function saveRecord (record) {
     const transaction = db.transaction(["pending"], "readwrite");
 
     const store = transaction.objectStore("pending");
@@ -43,7 +43,7 @@ function checkDatabase() {
 
                 store.clear();
             }).catch(() => {
-                createRecord();
+                saveeRecord();
             })
         }
     };
