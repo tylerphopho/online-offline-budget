@@ -1,4 +1,3 @@
-import { response } from "express";
 
 const FILES_TO_CACHE = [
     "/",

@@ -41,7 +41,17 @@
     <canvas id="myChart"></canvas>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-  <script src="index.js"></script>
+  <script src="js/chart.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/indexDB.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("service-worker.js").then(reg => {
+          console.log("Success, your service worker file!", reg);
+        });
+      });
+    }
+  </script>
 </body>
 </html>

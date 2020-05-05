@@ -1,7 +1,6 @@
-import { response } from "express";
 
 let db;
-const request = indexDB.open("budget", 1);
+const request = indexedDB.open("budget", 1);
 
 request.onsuccess = function(event) {
     db = event.target.result;
@@ -25,7 +24,7 @@ function saveRecord (record) {
 function checkDatabase() {
     const transaction = db.transaction(["pending"], "readwrite");
     const store = transaction.objectStore("pending");
-    const getAll = store.getAll()
+    const getAll = store.getAll();
     
     getAll.onsuccess = function() {
         if(getAll.result.length > 0){
